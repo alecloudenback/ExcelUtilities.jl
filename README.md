@@ -14,3 +14,5 @@ Copy/paste to/from Excel:
 - `xlcopy(data)` will copy Julia data into your clipboard for pasting into Excel.
 
 Also note related packages, such as [XLSX.jl](https://felipenoris.github.io/XLSX.jl/stable/) for working with Excel files.
+
+This functionality was originally a part of [ActuaryUtilities.jl](https://github.com/JuliaActuary/ActuaryUtilities.jl)
