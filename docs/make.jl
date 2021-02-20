@@ -18,4 +18,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/alecloudenback/ExcelUtilities.jl",
+    devbranch = "main",
 )
