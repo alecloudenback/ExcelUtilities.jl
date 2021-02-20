@@ -45,4 +45,7 @@ function xlclip_writer(data)
    return result[1:end-1] # drop the trailing newline
 end
 
+
+include("precompile.jl")
+_precompile_()
 end
