@@ -3,6 +3,8 @@ module ExcelUtilities
 using CSV
 using Tables
 
+export xlclip
+
 """
     xlclip()
 
