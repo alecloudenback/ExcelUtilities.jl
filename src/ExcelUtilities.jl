@@ -2,6 +2,7 @@ module ExcelUtilities
 
 using CSV
 using Tables
+import InteractiveUtils
 
 export xlclip
 
