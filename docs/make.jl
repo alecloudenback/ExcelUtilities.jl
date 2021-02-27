@@ -17,5 +17,5 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/alecloudenback/ExcelUtilities.jl",
+    repo="github.com/alecloudenback/ExcelUtilities.jl.git",
 )
