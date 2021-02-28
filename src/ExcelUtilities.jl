@@ -9,7 +9,11 @@ export xlclip
 """
     xlclip()
 
-Copy Excel-copied data from the clipboard into a Julia vector or matrix (depending on shape). Single column or row are converted to Julia `Vector`s.
+Copy Excel-copied data from the clipboard into a Julia vector or matrix (depending on shape). Single column or row are converted to Julia `Vector`s. Two dimensional data is copied into a matrix (2D array).
+
+The data is parsed using [CSV.jl](https://github.com/JuliaData/CSV.jl); if you have questions about how it's being read check the documentation for that package.
+
+Common issues are that the data you are trying to copy has numbers that are formatted in a way that is not natively recognized as numbers in Julia. Either make sure to make your numbers formatted in a standard format in Excel, e.g. `-1235.32` and not `(1,235.32)`.
 """
 function xlclip()
     xlclip_reader(InteractiveUtils.clipboard())
@@ -28,11 +32,11 @@ function xlclip_reader(str)
 end
 
 """
-    xlclip()
+    xlclip(data)
 
 Copy Julia array to the clipboard in an Excel-friendly format.
 
-Vectors will be copied as Excel columns; to copy a vector `v` to a row for Excel, you can transpose it: `xlclip(v')`
+Vectors will be copied as Excel columns; to copy a vector `v` to a row for Excel, you can transpose it with a single quote: `xlclip(v')`
 """
 function xlclip(data)
     InteractiveUtils.clipboard(xlclip_writer(data)) # drop the trailing newline
